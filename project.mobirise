@@ -50,7 +50,7 @@
     "cookiesAlert": "",
     "gdpr": "",
     "сanonical-url": "https://www.sunberry.fr",
-    "uniqCompNum": 17,
+    "uniqCompNum": 18,
     "versionPublish": "4.9.3",
     "screenshot": "screenshot.png",
     "sitemapSwitcher": "on"
@@ -1344,6 +1344,113 @@
           "_customHTML": "<section class=\"contact1\" group=\"Contacts\" plugins=\"amp-main,amp-form,amp-mustache\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"4\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n\n        <input type=\"color\" title=\"Fields Color\" name=\"inputColor\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Border Color\" name=\"borderColor\" value=\"#767676\">\n        <input type=\"color\" title=\"Form Text Color\" name=\"labelsColor\" value=\"#000000\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected=\"\"> \n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <h2 mbr-if=\"showTitle\" class=\"align-center mbr-fonts-style mbr-light\" mbr-theme-style=\"display-2\">\n            Subscribe Form\n        </h2>\n        <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-fonts-style mbr-light\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle\">\n            Subscribe to our Newsletter\n        </h3>\n\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div mbr-form=\"\" class=\"mbr-col-lg-10  mbr-col-md-12 \">\n                <form class=\"mbr-form mbr-justify-content-center\" action=\"\" method=\"post\" name=\"Mobirise Form\" target=\"_top\" novalidate=\"\">\n                    <div submit-success=\"\">\n                      <template data-form-alert=\"\" type=\"amp-mustache\">Subscription successful!</template>\n                    </div>\n                    <div submit-error=\"\">\n                      <template data-form-alert=\"\" type=\"amp-mustache\">Subscription successful!</template>\n                    </div>\n                    <div class=\"fieldset\">\n                        <label data-for=\"form[data][0][1]\">\n                            <input type=\"hidden\" name=\"form[data][0][0]\" value=\"Name\">\n                            <input type=\"text\" name=\"form[data][0][1]\" data-form-field=\"Name\" placeholder=\"Name\" required=\"\">\n                        </label>\n                        <label data-for=\"form[data][1][1]\">\n                            <input type=\"hidden\" name=\"form[data][1][0]\" value=\"Last Name\">\n                            <input type=\"text\" name=\"form[data][1][1]\" data-form-field=\"Last Name\" placeholder=\"Last Name\" required=\"\">\n                        </label>\n                        <label data-for=\"form[data][2][1]\">\n                            <input type=\"hidden\" name=\"form[data][2][0]\" value=\"Email\">\n                            <input type=\"email\" name=\"form[data][2][1]\" data-form-field=\"Email\" placeholder=\"Email\" required=\"\">\n                        </label>\n                    </div>\n                    <div class=\"mbr-section-btn align-left\" data-toolbar=\"-mbrBtnMove\" mbr-buttons=\"\" mbr-theme-style=\"display-4\"><a type=\"submit\" class=\"btn btn-form btn-primary\" data-app-placeholder=\"Type Text\">SUBSCRIBE</a></div>\n                </form>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "riQ3S5t3MS",
           "_anchor": "contacts1-6",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".carousel, .slider-box": {
+              "height": "300px"
+            },
+            ".slider-box when (@showTitle), (@showSubtitle)": {
+              "margin-top": "2rem"
+            },
+            ".slider-box when (@showText), (@showButtons)": {
+              "margin-bottom": "2rem"
+            },
+            ".amp-carousel-button": {
+              "width": "50px",
+              "height": "50px",
+              "border-radius": "50%"
+            },
+            "amp-img, img": {
+              "width": "100%",
+              "height": "100%",
+              "object-fit": "cover",
+              "position": "relative"
+            },
+            ".carousel-img": {
+              "width": "100%",
+              "height": "300px",
+              "position": "relative"
+            },
+            "@media (min-width: 768px)": {
+              ".carousel-img": {
+                "max-width": "450px"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".carousel-img": {
+                "margin": "0"
+              },
+              ".amp-carousel-button": {
+                "display": "none"
+              }
+            },
+            "amp-img:after": {
+              "position": "absolute",
+              "content": "\"\"",
+              "width": "100%",
+              "height": "100%",
+              "left": "0",
+              "top": "0",
+              "background-color": "@imgOverlayColor",
+              "opacity": "0",
+              "pointer-events": "none",
+              "transition": "opacity .3s"
+            },
+            ".icon-wrap": {
+              "width": "~\"@{iconsSize}rem\"",
+              "height": "~\"@{iconsSize}rem\"",
+              "position": "absolute",
+              "left": "50%",
+              "top": "50%",
+              "opacity": "0",
+              "transform": "translate(-50%, -50%)",
+              "pointer-events": "none",
+              "transition": "opacity .3s",
+              ".amp-iconfont": {
+                "font-size": "~\"@{iconsSize}rem\"",
+                "width": "~\"@{iconsSize}rem\"",
+                "color": "contrast(@imgOverlayColor, darken(@imgOverlayColor, 50%), #ffffff, 60%)"
+              }
+            },
+            ".carousel-img:hover": {
+              "amp-img": {
+                "cursor": "pointer",
+                "&:after": {
+                  "opacity": "@imgOverlayOpacity"
+                }
+              },
+              ".icon-wrap": {
+                "opacity": "1"
+              }
+            },
+            "P": {
+              "text-align": "left",
+              "color": "#232323"
+            },
+            ".mbr-section-title": {
+              "color": "#232323"
+            },
+            ".mbr-section-subtitle": {
+              "color": "#232323"
+            }
+          },
+          "_name": "slider2",
+          "_customHTML": "<section class=\"slider2 slider\" group=\"Carousels &amp; Sliders\" plugins=\"amp-main,amp-carousel,amp-image-lightbox\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        \n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked=\"\">\n        <input type=\"checkbox\" title=\"show Buttons\" name=\"showButtons\">\n        \n        <input type=\"range\" inline=\"\" title=\"Icons Size\" name=\"iconsSize\" min=\"1\" max=\"3\" step=\"0.1\" value=\"2\">\n        \n        <select title=\"Images\" name=\"imagesAmount\">\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\" selected=\"\">4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\">6</option>\n        </select>\n\n        <input type=\"color\" title=\"Image Overlay Color\" name=\"imgOverlayColor\" value=\"#4ea2e3\">\n        <input type=\"range\" inline=\"\" title=\"Image Overlay Opacity\" name=\"imgOverlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background6.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#d5d5d5\" selected=\"\">\n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <h3 class=\"mbr-fonts-style mbr-section-title mbr-light align-center mbr-white\" mbr-if=\"showTitle\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title\">C'est plus cher et ça marche moins bien !\n</h3>\n        <h4 class=\"mbr-fonts-style mbr-section-subtitle mbr-light align-center mbr-white\" mbr-if=\"showSubtitle\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-subtitle\">MESURER POUR COMPRENDRE ET AMELIORER.</h4>\n        <div class=\"slider-box\"><amp-carousel class=\"carousel\" height=\"300\" layout=\"fixed-height\" type=\"carousel\"><div class=\"carousel-img mbr-col-sm-12\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/chauffage-solaire-cuivre-900x506.jpg\" alt=\"Serpentin cuivre\" width=\"533.596837944664\" layout=\"responsive\" height=\"300\" on=\"tap:lightbox1\" role=\"button\" tabindex=\"0\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/chauffage-solaire-cuivre-900x506.jpg\" alt=\"Serpentin cuivre\" title=\"Chauffe eau solaire diy\">\n                    </amp-img>\n                    <div class=\"icon-wrap\" on=\"tap:lightbox1\" role=\"button\" tabindex=\"0\">\n                        <span mbr-icon=\"\" class=\"amp-iconfont mbri-search\"></span>\n                    </div>\n                </div><div class=\"carousel-img mbr-col-sm-12\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/tuyau-arrosage-enroul-solaire-900x814.jpg\" alt=\"Tuyau arrosage\" width=\"331.6953316953317\" height=\"300\" layout=\"responsive\" on=\"tap:lightbox1\" role=\"button\" tabindex=\"0\">\n                            <div placeholder=\"\" class=\"placeholder\"></div>\n                            <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/tuyau-arrosage-enroul-solaire-900x814.jpg\" alt=\"Tuyau arrosage\" title=\"Tuyau noir enroulé chauffe eau\">\n                    </amp-img>\n                    <div class=\"icon-wrap\" on=\"tap:lightbox1\" role=\"button\" tabindex=\"0\">\n                        <span mbr-icon=\"\" class=\"amp-iconfont mbri-search\"></span>\n                    </div>\n                </div><div class=\"carousel-img mbr-col-sm-12\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/radiateur-frigo-panneau-solaire-560x420.jpg\" alt=\"chauffage\" width=\"400\" height=\"300\" layout=\"responsive\" on=\"tap:lightbox1\" role=\"button\" tabindex=\"0\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/radiateur-frigo-panneau-solaire-560x420.jpg\" alt=\"chauffage\" title=\"Radiateur frigo panneau solaire\">\n                    </amp-img>\n                    <div class=\"icon-wrap\" on=\"tap:lightbox1\" role=\"button\" tabindex=\"0\">\n                        <span mbr-icon=\"\" class=\"amp-iconfont mbri-search\"></span>\n                    </div>\n                </div><div class=\"carousel-img mbr-col-sm-12\">\n                    <amp-img class=\"mobirise-loader\" src=\"@PROJECT_PATH@/assets/images/tuyau-noir-enroule-solaire-664x498.jpg\" alt=\"tube noir solaire piscine\" width=\"400\" height=\"300\" layout=\"responsive\" on=\"tap:lightbox1\" role=\"button\" tabindex=\"0\">\n                        <div placeholder=\"\" class=\"placeholder\"></div>\n                        <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/tuyau-noir-enroule-solaire-664x498.jpg\" alt=\"tube noir solaire piscine\" title=\"Chauffe piscine tuyau noir\">\n                    </amp-img>\n                    <div class=\"icon-wrap\" on=\"tap:lightbox1\" role=\"button\" tabindex=\"0\">\n                        <span mbr-icon=\"\" class=\"amp-iconfont mbri-search\"></span>\n                    </div>\n                </div></amp-carousel>\n            \n        </div>\n        <p class=\"mbr-text align-center mbr-fonts-style mbr-white\" mbr-if=\"showText\" mbr-theme-style=\"display-7\">Sans mesure impossible de savoir si une installation solaire a un bon rendement.\n<br>\n<br>On trouve sur internet de nombreux bricolages de panneaux solaires, qui ne captent qu'une petite partie du soleil (mauvais rendement) et chauffent donc mal : tuyau noir enroulé, radiateur de réfrigérateur, radiateurs de chauffage, canettes de boissons.\n<br>Grâce à une vraie démarche scientifique et à la Sunberry App, on dispose d'une mesure du rendement qui permet d'affirmer que ces solutions ne sont pas efficaces.\n<br>Nos panneaux solaires atteignent un rendement de 70% en hiver, et jusqu'à 100% en été.\n<br>\n<br>Ne gaspillez pas votre argent et votre temps à construire des solutions inefficaces!\n<br><a href=\"index.html#contacts1-6\">Demandez la documentation</a>, on vous explique tout.</p>\n        <div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons=\"\" mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-primary\" href=\"https://mobirise.com\" data-app-placeholder=\"Type Text\">VIEW MORE</a></div>\n    </div>\n    <amp-image-lightbox id=\"lightbox1\" layout=\"nodisplay\">\n        <a class=\"control\" data-close-button-aria-label=\"Close\">\n            <span class=\"close\"></span>\n        </a>\n    </amp-image-lightbox>\n</section>",
+          "_cid": "rj0imN2A2W",
+          "_anchor": "slider2-h",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
