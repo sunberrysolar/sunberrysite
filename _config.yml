@@ -1,2 +1,17 @@
 plugins:
   - jekyll-seo-tag
+  
+title:            Chauffage solaire DIY Sunberry
+description:      Fabriquez un chauffage solaire à l efficacité testée et mesurée, avec de simples matériaux du commerce, pour très peu cher.
+La Sunberry App se charge d automatiser son fonctionnement et affiche votre production d énergie chaque jour.
+
+url:              https://www.sunberry.fr
+author:           Sunberry.fr
+logo:             /assets/logo-chauffage-solaire-sunberry-499x263.png
+
+twitter: 
+  username: SunberryIO
+  
+  
+
+
