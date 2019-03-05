@@ -33,6 +33,59 @@
     <meta name="theme-color" content="#663fb5">
   </head>
 <body>
+	
+<?php       
+
+    // Ma clé privée
+
+    $secret = "6LdZlJUUAAAAAOEoJZwLHSx9WWeVpNfxGHdzq6RA";
+
+    // Paramètre renvoyé par le recaptcha
+
+    $response = $_POST['g-recaptcha-response'];
+
+    // On récupère l'IP de l'utilisateur
+
+    $remoteip = $_SERVER['REMOTE_ADDR'];
+
+    
+
+    $api_url = "https://www.google.com/recaptcha/api/siteverify?secret=" 
+
+        . $secret
+
+        . "&response=" . $response
+
+        . "&remoteip=" . $remoteip ;
+
+    
+
+    $decode = json_decode(file_get_contents($api_url), true);
+
+    
+
+    if ($decode['success'] == true) {
+
+        // C'est un humain
+        goto debut;
+
+    }
+
+    
+
+    else {
+
+        // C'est un robot ou le code de vérification est incorrecte
+        goto fin;
+
+    }
+
+        
+
+?>
+	
+<?php 	debut:
+?>
     <!-- Navigation
     ================================================== -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-inverse-custom">
@@ -1021,4 +1074,8 @@ ga('create', 'UA-86206346-1', 'auto');
 ga('send', 'pageview');</script>
 
 </body>
+<?php 	fin:
+echo "Captcha non valide, refaites le test si vous êtes un humain.";
+?>
+
 </html>
